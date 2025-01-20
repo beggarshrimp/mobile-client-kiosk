@@ -1,0 +1,126 @@
+<style>
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 20px;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+h4 {
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin: 0.5em 0;
+    text-align: justify;
+}
+
+/* Table Styles */
+figure.table {
+    margin: 1em 0;
+    display: block;
+    overflow-x: auto;
+}
+
+table {
+    max-width: 750;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background-color: #fff;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+}
+
+table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+table td {
+    font-size: 0.9em;
+}
+
+/* Code Block Styles */
+pre {
+    background-color: #f4f4f4;
+    border-left: 4px solid #2c3e50;
+    padding: 10px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #333;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #c0392b;
+}
+
+/* Utility Classes */
+.float-left {
+    float: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+}
+</style>
+
+<h4>Thank you for choosing Mobile Client Kiosk!</h4>
+<p>You need to distribute the app using a Mobile Device Management (MDM) solution and implement Manage App Configuration to customize settings.</p>
+<p>Also, the app leverages iOS autonomous Single App Mode, which can be configured with a configuration profile with Restrictions payload.</p>
+
+<div>
+    <h4>Managed App Config settings</h4>
+    <figure class="table">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p><strong>default-interfaceURL</strong></p>
+                    </td>
+                    <td>URL to display in app</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><strong>default-passCode</strong></p>
+                    </td>
+                    <td>Passcode to exit single app mode</td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+</div>
+
+<div>
+    <h4>App Config template</h4>
+    <pre><code class="language-xml language-plaintext">&lt;dict&gt;
+  &lt;key&gt;default-interfaceURL&lt;/key&gt;
+  &lt;string&gt;http://ya-appleinfra.github.io/mobile-client-invite-kiosk&lt;/string&gt;
+  &lt;key&gt;default-passCode&lt;/key&gt; 
+  &lt;string&gt;1234&lt;/string&gt;
+&lt;/dict&gt;</code></pre>
+</div>
