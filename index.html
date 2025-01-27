@@ -89,12 +89,12 @@ code {
 }
 </style>
 
-<h4>Thank you for choosing Mobile Client Kiosk!</h4>
+<h3>Thank you for choosing Mobile Client Kiosk!</h3>
 <p>You need to distribute the app using a Mobile Device Management (MDM) solution and implement Manage App Configuration to customize settings.</p>
 <p>Also, the app leverages iOS autonomous Single App Mode, which can be configured with a configuration profile with Restrictions payload.</p>
 
 <div>
-    <h4>Managed App Config settings</h4>
+    <h3>Managed App Config settings</h3>
     <figure class="table">
         <table>
             <tbody>
@@ -116,11 +116,23 @@ code {
 </div>
 
 <div>
-    <h4>App Config template</h4>
+    <h3>App Config template</h3>
     <pre><code class="language-xml language-plaintext">&lt;dict&gt;
   &lt;key&gt;default-interfaceURL&lt;/key&gt;
   &lt;string&gt;https://beggarshrimp.github.io/mobile-client-kiosk/&lt;/string&gt;
   &lt;key&gt;default-passCode&lt;/key&gt; 
   &lt;string&gt;1234&lt;/string&gt;
 &lt;/dict&gt;</code></pre>
+</div>
+
+<div>
+    <h3>Autonomous Single App Mode</h3>
+    <p>To use the Autonomous Single App Mode feature in the app, you’ll need to install a configuration profile on the device using an MDM solution.</p>
+    <p>This profile must contain the following payload:</p>
+    <pre><code class="language-xml">&lt;key&gt;autonomousSingleAppModePermittedAppIDs&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;ru.yandex.mobile-client-invite-kiosk&lt;/string&gt;
+&lt;/array&gt;
+</code></pre>
+<p>To exit Single App Mode swipe right three times on the screen and enter the PIN code, which should also be set up in the app’s settings through the MDM system.</p>
 </div>
