@@ -15,6 +15,12 @@
         margin-top: 1em;
         margin-bottom: 0.5em;
     }
+
+    h4 {
+        color: #2c3e50;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
     
     p {
         margin: 0.5em 0;
@@ -31,14 +37,14 @@
     table {
         max-width: 750;
         border-collapse: collapse;
-        margin: 0.5em 0;
+        margin: 1em 0;
         background-color: #fff;
     }
     
     table th,
     table td {
         border: 1px solid #ccc;
-        padding: 5px;
+        padding: 10px;
         text-align: left;
         font-size: 1em;
     }
@@ -87,53 +93,99 @@
             font-size: 1.2em;
         }
     }
-    </style>
+</style>
     
     
     
-    <h3>Thank you for choosing Mobile Client Kiosk!</h3>
-    <p>You need to distribute the app using a Mobile Device Management (MDM) solution and implement Manage App Configuration to customize settings.</p>
-    <p>Also, the app leverages iOS autonomous Single App Mode, which can be configured with a configuration profile with Restrictions payload.</p>
-    
-    <div>
-        <h3>Managed App Config settings</h3>
-        <figure class="table">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <p><strong>default-interfaceURL</strong></p>
-                        </td>
-                        <td>URL to display in app</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p><strong>default-passCode</strong></p>
-                        </td>
-                        <td>Passcode to exit single app mode</td>
-                    </tr>
-                </tbody>
-            </table>
-        </figure>
-    </div>
-    
-    <div>
-        <h3>App Config template</h3>
-        <pre><code class="language-xml language-plaintext">&lt;dict&gt;
-      &lt;key&gt;default-interfaceURL&lt;/key&gt;
-      &lt;string&gt;https://beggarshrimp.github.io/mobile-client-kiosk/&lt;/string&gt;
-      &lt;key&gt;default-passCode&lt;/key&gt; 
-      &lt;string&gt;1234&lt;/string&gt;
+<h3>Thank you for choosing Mobile Client Kiosk!</h3>
+<p>You need to distribute the app using a Mobile Device Management (MDM) solution and implement Manage App Configuration to customize settings.</p>
+<p>Also, the app leverages iOS autonomous Single App Mode, which can be configured with a configuration profile with Restrictions payload.</p>
+<p>Before using Mobile Client Kiosk, please review its <a href="#privacy-policy">Privacy Policy</a></p>
+
+<div>
+    <h3>Managed App Config settings</h3>
+    <figure class="table">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <p><strong>default-interfaceURL</strong></p>
+                    </td>
+                    <td>URL to display in app</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><strong>default-passCode</strong></p>
+                    </td>
+                    <td>Passcode to exit single app mode</td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+</div>
+
+<div>
+    <h3>App Config template</h3>
+    <pre><code class="language-xml language-plaintext">&lt;dict&gt;
+    &lt;key&gt;default-interfaceURL&lt;/key&gt;
+    &lt;string&gt;https://beggarshrimp.github.io/mobile-client-kiosk/&lt;/string&gt;
+    &lt;key&gt;default-passCode&lt;/key&gt; 
+    &lt;string&gt;1234&lt;/string&gt;
 &lt;/dict&gt;</code></pre>
-    </div>
-    
-    <div>
-        <h3>Autonomous Single App Mode</h3>
-        <p>To use the Autonomous Single App Mode feature in the app, you’ll need to install a configuration profile on the device using an MDM solution.</p>
-        <p>This profile must contain the following payload:</p>
-        <pre><code class="language-xml">&lt;key&gt;autonomousSingleAppModePermittedAppIDs&lt;/key&gt;
+</div>
+
+<div>
+    <h3>Autonomous Single App Mode</h3>
+    <p>To use the Autonomous Single App Mode feature in the app, you need to install a configuration profile on the device using an MDM solution.</p>
+    <p>This profile must contain the following payload:</p>
+    <pre><code class="language-xml">&lt;key&gt;autonomousSingleAppModePermittedAppIDs&lt;/key&gt;
 &lt;array&gt;
     &lt;string&gt;ru.yandex.mobile-client-invite-kiosk&lt;/string&gt;
-&lt;/array&gt;</code></pre>
-    <p>To exit Single App Mode swipe right three times on the screen and enter the PIN code, which should also be set up using the Managed App Configuration through your MDM solution</p>
-    </div>
+&lt;/array&gt;
+</code></pre>
+<p>To exit Single App Mode swipe right three times on the screen and enter the PIN code, which should also be set up using the Managed App Configuration through your MDM solution</p>
+</div>
+
+<div>
+    <h3 id="privacy-policy">Privacy Policy</h3>
+    <ol>
+    <li>
+        <h4>Introduction</h4>
+        <p>This Privacy Policy describes how Mobile Client Kiosk ("the App") handles user data. The App itself does not collect, store, or process any personal data from its users. However, it is designed to be configured through a Mobile Device Management (MDM) solution chosen by the company that manages the device. Any data collection or processing is governed by the policies of the respective MDM provider and the organization managing the device.</p>
+    </li>
+    <li>
+        <h4>Data Collection and Usage</h4>
+        <ul>
+            <li>The App does not collect, store, or process any personal information or user data.</li>
+            <li>The App does not track user activity, request permissions for sensitive information, or transmit any data externally.</li>
+            <li>The App operates entirely based on configurations set by the MDM solution deployed by the company managing the device.</li>
+            <li>The App is designed to display a web page that is configured through the MDM solution. Developer of the App is not responsible for any data collected through web pages displayed within it.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Mobile Device Management (MDM) Solution</h4>
+        <ul>
+            <li>The MDM solution used by the company may collect and process user data based on the organization's policies.</li>
+            <li>The App does not have control over, access to, or responsibility for any data collected by the MDM solution.</li>
+            <li>Any data collection by the MDM solution is subject to the terms, conditions, and privacy policies of the respective MDM provider and the organization managing the device.</li>
+            <li>The App does not utilize, share, or process data gathered by the MDM solution.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Third-Party Services</h4>
+        <ul>
+            <li>The App does not integrate with third-party services, analytics tools, or advertising networks.</li>
+            <li>Any interactions with external services occur solely through the MDM solution or web pages configured by the MDM solution, which is outside the scope of this Privacy Policy.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Security</h4>
+        <ul>
+            <li>Since the App does not collect or store any user data, there are no risks associated with unauthorized access to user data within the App.</li>
+            <li>The security of the device and its configurations is managed by the MDM solution and the organization deploying it.</li>
+        </ul>
+    </li>
+    </ol>
+    <p>By using the App, you acknowledge that it does not collect, store, or process user data and that any data collection is the responsibility of the MDM solution implemented by your organization.</p>
+
+</div>
